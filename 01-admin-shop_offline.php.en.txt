@@ -2,9 +2,8 @@
 
 ## Summary
 
-The administrative endpoint `admin/shop_offline.php` directly concatenates user-controlled values from the `customers_groups[]` parameter into an SQL `UPDATE` statement.
+Modified Shop 3.3.0 rev. 16825 contains an authenticated SQL injection vulnerability in `admin/shop_offline.php`. The `customers_groups[]` parameter is incorporated into an SQL `UPDATE` statement without adequate validation or escaping. An authenticated administrator can exploit this vulnerability to manipulate the query and execute arbitrary SQL expressions with the privileges of the application's database user, potentially resulting in unauthorized disclosure or modification of application data and disruption of service.
 
-An authenticated administrator can alter the query structure and execute SQL expressions against the application's database.
 
 ## Classification
 
