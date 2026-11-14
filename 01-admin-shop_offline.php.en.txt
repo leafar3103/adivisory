@@ -4,10 +4,20 @@
 
 Modified Shop 3.3.0 rev. 16825 contains an authenticated SQL injection vulnerability in `admin/shop_offline.php`. The `customers_groups[]` parameter is incorporated into an SQL `UPDATE` statement without adequate validation or escaping. An authenticated administrator can exploit this vulnerability to manipulate the query and execute arbitrary SQL expressions with the privileges of the application's database user, potentially resulting in unauthorized disclosure or modification of application data and disruption of service.
 
+## Affected Product
 
-## Classification
+- **Product:** Modified Shop
+- **Version tested:** 3.3.0
+- **Revision:** 16825
+- **Affected component:** Shop Offline
+- **Relevant endpoint:** '/admin/shop_offline.php'
+- **Vendor:** https://github.com/modified-shop/modified-shop
 
-- **Type:** Authenticated, time-based SQL Injection (SQLi)
+
+
+## Vulnerability Classification
+
+- **Vulnerability Type:** Authenticated, time-based SQL Injection (SQLi)
 - **CWE:** CWE-89 — Improper Neutralization of Special Elements used in an SQL Command
 - **Severity:** High
 - **Suggested CVSS 3.1:** 8.0 (AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H)
